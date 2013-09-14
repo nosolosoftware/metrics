@@ -1,0 +1,96 @@
+#
+# This file is part of the metrics repository. Copyright (C) 2013 and above Shogun <shogun@cowtech.it>.
+# Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.
+#
+
+---
+### Enabled ###
+ClassVariable:
+  enabled: true
+  exclude: []
+DuplicateMethodCall:
+  enabled: true
+  exclude: []
+  max_calls: 2
+  allow_calls: []
+LongParameterList:
+  enabled: true
+  exclude: []
+  max_params: 5
+  overrides:
+    initialize:
+      max_params: 10
+LongYieldList:
+  enabled: true
+  exclude: []
+  max_params: 5
+NestedIterators:
+  enabled: true
+  exclude: []
+  max_allowed_nesting: 3
+  ignore_iterators: []  
+NilCheck:
+  enabled: true
+  exclude: []
+RepeatedConditional:
+  enabled: true
+  exclude: []
+  max_ifs: 2
+TooManyInstanceVariables:
+  enabled: true
+  exclude: []
+  max_instance_variables: 15
+TooManyMethods:
+  enabled: true
+  exclude: []
+  max_methods: 25
+TooManyStatements:
+  enabled: true
+  exclude:
+  - initialize
+  max_statements: 15
+UncommunicativeMethodName:
+  enabled: true
+  exclude: []
+  reject:
+  - !ruby/regexp /^[a-z]$/
+  - !ruby/regexp /[0-9]$/
+  - !ruby/regexp /[A-Z]/
+  accept: []
+UncommunicativeModuleName:
+  enabled: true
+  exclude: []
+  reject:
+  - !ruby/regexp /^.$/
+  - !ruby/regexp /[0-9]$/
+  accept:
+  - Inline::C
+UnusedParameters:
+  enabled: true
+  exclude: []
+
+### Enablable ###
+FeatureEnvy:
+  enabled: false
+  exclude: []
+IrresponsibleModule:
+  enabled: false
+  exclude: []
+
+### Disabled ###
+Attribute:
+  enabled: false
+  exclude: []
+BooleanParameter:
+  enabled: false
+ControlParameter:
+  enabled: false
+  exclude: []
+DataClump:
+  enabled: false
+UncommunicativeParameterName:
+  enabled: false
+UncommunicativeVariableName:
+  enabled: false
+UtilityFunction:
+  enabled: false
