@@ -46,13 +46,15 @@ Within your project directory, execute the following steps.
 
 ## Running metrics automatically
 
+`SOURCES` is a list of directory of Ruby SOURCES. **Point this to the actual implementation, not to the spec folder**.
+
 ```bash
-metric_fu --out metrics/
+MF_SOURCES=$SOURCES metric_fu
 ```
 
 ## Running metrics manually
 
-From now on, `SOURCE` is a single directory of Ruby sources. **Point this to the actual implementation, not to the spec folder**.
+From now on, `SOURCES` is a single directory of Ruby SOURCES. **Point this to the actual implementation, not to the spec folder**.
 
 Sample configs, when applicable, can be found in this repository.
 
@@ -138,4 +140,4 @@ The output will be on the terminal.
 
 Copyright (C) 2013 and above Shogun (shogun@cowtech.it).
 
-Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.
+Licensed under the MIT license, which can be found at http://www.openSOURCES.org/licenses/mit-license.php.
