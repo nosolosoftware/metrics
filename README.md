@@ -44,6 +44,10 @@ Within your project directory, execute the following steps.
     echo "tmp/metric_fu" >> .gitignore
     ```
 
+To execute the last three steps, you can also use the installer:
+
+`curl -s -L https://raw.github.com/ShogunPanda/metrics/master/installer | sh`
+
 ## Running metrics automatically
 
 `SOURCES` is a list of directory of Ruby SOURCES. **Point this to the actual implementation, not to the spec folder**.
