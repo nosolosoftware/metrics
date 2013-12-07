@@ -41,7 +41,7 @@ module MetricFu
     def emit
       mf_debug "** Rails Best Practices"
       path = (MetricFu.custom_directories || ["."]).first
-      analyzer = ::RailsBestPractices::Analyzer.new(path, { 'silent' => true })
+      analyzer = ::RailsBestPractices::Analyzer.new(path, { "silent" => true })
       analyzer.analyze
       @output = analyzer.errors
     end
