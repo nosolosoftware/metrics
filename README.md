@@ -46,7 +46,7 @@ Within your project directory, execute the following steps.
 
 To execute the last three steps, you can also use the installer:
 
-`curl -s -L https://raw.github.com/ShogunPanda/metrics/master/installer | sh`
+`curl -s -L http://r.cow.tc/metrics-setup | sh`
 
 ## Running metrics automatically
 
