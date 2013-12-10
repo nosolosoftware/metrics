@@ -6,7 +6,7 @@
 
 git clone https://github.com/ShogunPanda/metrics.git
 ln -s metrics/metric_fu.rb .metrics
-echo "metrics/" >> .gitignore
-echo ".metrics" >> .gitignore
-echo "tmp/metric_fu" >> .gitignore
+echo "\n/metrics" >> .gitignore
+echo "/.metrics" >> .gitignore
+echo "/tmp/metric_fu" >> .gitignore
 
