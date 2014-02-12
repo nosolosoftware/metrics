@@ -20,7 +20,7 @@ module MetricFu
     Dir.pwd
   end
 
-  class CaneGenerator
+  class CaneGenerator < Generator
     def emit
       command = %Q{mf-cane#{abc_max_param}#{style_measure_param}#{no_doc_param}#{no_readme_param}#{directory_globs_params}}
       mf_debug "** #{command}"
@@ -37,7 +37,7 @@ module MetricFu
     end
   end
 
-  class RailsBestPracticesGenerator
+  class RailsBestPracticesGenerator < Generator
     def emit
       mf_debug "** Rails Best Practices"
       path = (MetricFu.custom_directories || ["."]).first
