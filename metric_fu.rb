@@ -22,18 +22,11 @@ module MetricFu
 
   class CaneGenerator < Generator
     def emit
-      command = %Q{mf-cane#{abc_max_param}#{style_measure_param}#{no_doc_param}#{no_readme_param}#{directory_globs_params}}
-      mf_debug "** #{command}"
-      @output = `#{command}`
+      @output = run!([abc_max_param, style_measure_param, no_doc_param, no_readme_param, directory_globs_params].join)
     end
 
     def directory_globs_params
-      if options[:dirs_to_cane]
-        globs = "{#{options[:dirs_to_cane].join(",")}}/**/*.rb"
-        " --abc-glob \"#{globs}\" --style-glob \"#{globs}\""
-      else
-        ""
-      end
+      options[:dirs_to_cane] ?  " --abc-glob \"%s\" --style-glob \"%s\"".gsub("%s", "{#{options[:dirs_to_cane].join(",")}}/**/*.rb") : ""
     end
   end
 
