@@ -6,7 +6,7 @@
 
 module MetricFu
   def self.custom_directories
-    rv = ENV["MF_SOURCES"]
+    rv = ENV["MF_SOURCES"] || Dir.pwd
 
     if rv then
       rv = rv.split(":") if rv.index(":")
