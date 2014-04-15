@@ -49,6 +49,7 @@ MetricFu::Configuration.run do |config|
 
   config.configure_metric(:cane) do |metric|
     metric.dirs_to_cane = MetricFu.custom_directories if MetricFu.custom_directories
+    metric.abc_max = 20
     metric.line_length = 160
     metric.no_doc = "y"
     metric.no_readme = "y"

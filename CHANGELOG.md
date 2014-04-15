@@ -1,6 +1,7 @@
 ### 2014-04-15
 
 * Fallback on the current directory when no paths are specified.
+* Updated Cane settings.
 
 ### 2014-04-06
 
