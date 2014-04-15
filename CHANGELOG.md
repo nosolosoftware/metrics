@@ -1,3 +1,7 @@
+### 2014-04-15
+
+* Fallback on the current directory when no paths are specified.
+
 ### 2014-04-06
 
 * Bugfixes.
