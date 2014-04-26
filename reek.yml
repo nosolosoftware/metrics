@@ -16,7 +16,7 @@ DuplicateMethodCall:
 LongParameterList:
   enabled: true
   exclude: []
-  max_params: 5
+  max_params: 6
   overrides:
     initialize:
       max_params: 10
@@ -54,7 +54,6 @@ UncommunicativeMethodName:
   exclude: []
   reject:
   - !ruby/regexp /^[a-z]$/
-  - !ruby/regexp /[0-9]$/
   - !ruby/regexp /[A-Z]/
   accept: []
 UncommunicativeModuleName:
@@ -80,13 +79,13 @@ IrresponsibleModule:
 ### Disabled ###
 Attribute:
   enabled: false
-  exclude: []
 BooleanParameter:
   enabled: false
 ControlParameter:
   enabled: false
-  exclude: []
 DataClump:
+  enabled: false
+PrimaDonnaMethod:
   enabled: false
 UncommunicativeParameterName:
   enabled: false
