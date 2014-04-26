@@ -25,4 +25,4 @@ ModuleLineCountCheck:
 ModuleNameCheck:          
   pattern: !ruby/regexp /^[A-Z][a-zA-Z0-9]*$/
 ParameterNumberCheck:            
-  parameter_count: 5
+  parameter_count: 6
