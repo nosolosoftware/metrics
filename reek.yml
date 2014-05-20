@@ -29,9 +29,6 @@ NestedIterators:
   exclude: []
   max_allowed_nesting: 3
   ignore_iterators: []  
-NilCheck:
-  enabled: true
-  exclude: []
 RepeatedConditional:
   enabled: true
   exclude: []
@@ -85,6 +82,9 @@ ControlParameter:
   enabled: false
 DataClump:
   enabled: false
+NilCheck:
+  enabled: false
+  exclude: []
 PrimaDonnaMethod:
   enabled: false
 UncommunicativeParameterName:
