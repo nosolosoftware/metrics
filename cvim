@@ -1,0 +1,21 @@
+#! /usr/bin/env ruby
+
+require 'uri'
+require 'cgi'
+
+full_path = ARGV[0].split('////')[1]
+
+if full_path
+  uri = URI::parse(full_path)
+
+  vim_params = %Q["#{uri.path}"]
+
+  if uri.query
+    params = CGI::parse(uri.query)
+    line = params["line"][0]
+  end
+
+  vim_params << " +#{line}" if line
+end
+
+`urxvt -e vim #{vim_params}`

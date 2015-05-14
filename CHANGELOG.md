@@ -1,3 +1,9 @@
+### 2015-05-14
+
+* Add hotspots and stats metrics.
+* Vim protocol handler.
+* Finetuned some metrics.
+
 ### 2014-04-26
 
 * Finetuned some metrics.

@@ -42,8 +42,13 @@ module MetricFu
 end
 
 MetricFu::Configuration.run do |config|
+  config.templates_configuration do |templates_config|
+    templates_config.link_prefix = 'vim:///'
+  end
+
   config.configure_metrics.each do |metric|
-    enabled_metrics = [:cane, :flog, :flay, :reek, :roodi, :rails_best_practices, :saikuro]
+    enabled_metrics =
+      [:cane, :flog, :flay, :reek, :roodi, :rails_best_practices, :saikuro, :hotspots, :stats]
     metric.enabled = enabled_metrics.include?(metric.name)
   end
 

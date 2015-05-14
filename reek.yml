@@ -28,7 +28,7 @@ NestedIterators:
   enabled: true
   exclude: []
   max_allowed_nesting: 3
-  ignore_iterators: []  
+  ignore_iterators: []
 RepeatedConditional:
   enabled: true
   exclude: []
@@ -67,29 +67,31 @@ UnusedParameters:
 
 ### Enablable ###
 FeatureEnvy:
-  enabled: false
+  enabled: true
   exclude: []
 IrresponsibleModule:
-  enabled: false
+  enabled: true
   exclude: []
 
 ### Disabled ###
 Attribute:
-  enabled: false
+  enabled: true
+  exclude: []
 BooleanParameter:
-  enabled: false
+  enabled: true
 ControlParameter:
-  enabled: false
+  enabled: true
+  exclude: []
 DataClump:
-  enabled: false
+  enabled: true
 NilCheck:
-  enabled: false
+  enabled: true
   exclude: []
 PrimaDonnaMethod:
   enabled: false
 UncommunicativeParameterName:
-  enabled: false
+  enabled: true
 UncommunicativeVariableName:
-  enabled: false
+  enabled: true
 UtilityFunction:
-  enabled: false
+  enabled: true
