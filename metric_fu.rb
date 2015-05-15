@@ -39,6 +39,21 @@ module MetricFu
       @output = analyzer.errors
     end
   end
+
+  class Template
+    def file_url(name, line)
+      return "" unless name
+      filename = complete_file_path(name)
+
+      link_prefix = MetricFu.configuration.templates_option("link_prefix")
+      if link_prefix == MetricFu::Templates::Configuration::FILE_PREFIX
+        path = filename
+      else
+        path = name.gsub(/:.*$/, "")
+      end
+      "#{link_prefix}/#{path}?line=#{line}"
+    end
+  end
 end
 
 MetricFu::Configuration.run do |config|

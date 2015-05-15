@@ -12,8 +12,6 @@ Also, I disabled some metrics I usually run separately (like Simplecov) or which
 
 Url in reports will open the file using vim, just to edit it fast.
 
-TODO: Support to open the file in the line referer in the report.
-
 ## Installing in your project
 
 Within your project directory, execute the following steps.

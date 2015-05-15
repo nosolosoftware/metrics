@@ -1,3 +1,7 @@
+### 2015-05-15
+
+* Open file with vim in the line referer in the report.
+
 ### 2015-05-14
 
 * Add hotspots and stats metrics.
