@@ -4,13 +4,23 @@
 # Licensed under the MIT license, which can be found at http://www.opensource.org/licenses/mit-license.php.
 #
 
+module RailsBestPractices
+  module Core
+    class Runner
+      def self.base_path
+        @base_path + '/..' || '.'
+      end
+    end
+  end
+end
+
 module MetricFu
   def self.custom_directories
-    rv = ENV["MF_SOURCES"] || Dir.pwd
+    rv = ENV['MF_SOURCES'] || Dir.pwd
 
-    if rv then
-      rv = rv.split(":") if rv.index(":")
-      rv = [rv] if !rv.is_a?(Array)
+    if rv
+      rv = rv.split(':') if rv.index(':')
+      rv = [rv] unless rv.is_a?(Array)
     end
 
     rv
@@ -26,15 +36,15 @@ module MetricFu
     end
 
     def directory_globs_params
-      options[:dirs_to_cane] ?  " --abc-glob \"%s\" --style-glob \"%s\"".gsub("%s", "{#{options[:dirs_to_cane].join(",")}}/**/*.rb") : ""
+      options[:dirs_to_cane] ? " --abc-glob \"%s\" --style-glob \"%s\"".gsub('%s', "{#{options[:dirs_to_cane].join(',')}}/**/*.rb") : ''
     end
   end
 
   class RailsBestPracticesGenerator < Generator
     def emit
-      mf_debug "** Rails Best Practices"
-      path = (MetricFu.custom_directories || ["."]).first
-      analyzer = ::RailsBestPractices::Analyzer.new(path, { "silent" => true })
+      mf_debug '** Rails Best Practices'
+      path = (MetricFu.custom_directories || ['.']).first
+      analyzer = ::RailsBestPractices::Analyzer.new(path, 'silent' => true)
       analyzer.analyze
       @output = analyzer.errors
     end
@@ -42,14 +52,14 @@ module MetricFu
 
   class Template
     def file_url(name, line)
-      return "" unless name
+      return '' unless name
       filename = complete_file_path(name)
 
-      link_prefix = MetricFu.configuration.templates_option("link_prefix")
+      link_prefix = MetricFu.configuration.templates_option('link_prefix')
       if link_prefix == MetricFu::Templates::Configuration::FILE_PREFIX
         path = filename
       else
-        path = name.gsub(/:.*$/, "")
+        path = name.gsub(/:.*$/, '')
       end
       "#{link_prefix}/#{path}?line=#{line}"
     end
@@ -71,8 +81,8 @@ MetricFu::Configuration.run do |config|
     metric.dirs_to_cane = MetricFu.custom_directories if MetricFu.custom_directories
     metric.abc_max = 20
     metric.line_length = 160
-    metric.no_doc = "y"
-    metric.no_readme = "y"
+    metric.no_doc = 'y'
+    metric.no_readme = 'y'
   end
 
   config.configure_metric(:flog) do |metric|
@@ -85,12 +95,12 @@ MetricFu::Configuration.run do |config|
 
   config.configure_metric(:reek) do |metric|
     metric.dirs_to_reek = MetricFu.custom_directories if MetricFu.custom_directories
-    metric.config_file_pattern = MetricFu.root_directory + "/metrics/reek.yml"
+    metric.config_file_pattern = MetricFu.root_directory + '/metrics/reek.yml'
   end
 
   config.configure_metric(:roodi) do |metric|
     metric.dirs_to_roodi = MetricFu.custom_directories if MetricFu.custom_directories
-    metric.roodi_config = MetricFu.root_directory + "/metrics/roodi.yml"
+    metric.roodi_config = MetricFu.root_directory + '/metrics/roodi.yml'
   end
 
   config.configure_metric(:saikuro) do |metric|
